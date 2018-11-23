@@ -1,1 +1,9 @@
-{{yield}}
+{{#each stars as |star|}}
+<a href="#">
+    {{#if star.isFull}}
+        {{fa-icon 'star'}}
+    {{else}}
+        {{fa-icon 'star-o'}}
+    {{/if}}
+</a>
+{{/each}}
