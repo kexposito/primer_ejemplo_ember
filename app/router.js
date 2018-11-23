@@ -7,8 +7,15 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('bands');
-  this.route('songs');
-});
+  this.route('bands',function(){
+   
+      this.route('band', {path: ':slug'},function(){    //this.route('band', {path: '\':slug\''},function(){
+        this.route('songs');
+    });
+  });
+}); 
+
+// genero la ruta /bands/banda_elegida/songs
+    // ember generate route bands/band --path=':slug'    () :slug=banda_elegida
 
 export default Router;
