@@ -2,10 +2,10 @@
     <ul class="rr-list">
         {{#each model as |band|}}
             <li class="rr-list-item">
-                {{#link-to "bands.band.songs" band class="rr-band-link"}}
+                 {{#link-to "bands.band.songs" band.slug class="rr-and-link"}}
                     {{band.name}}
                     <span class="pointer">
-                        {{fa-icon "angle-right"}}<!--Provoca error si no instalo el awesome-->
+                        {{fa-icon "angle-right"}}
                     </span>
                 {{/link-to}}
             </li>
@@ -13,9 +13,10 @@
     </ul>
     <div class="rr-new-label">
        {{#if isAddingBand}}
-            {{input type="text" class="rr-input" value=newBandName placeholder="New Band"}}
-            <button type="button" class="rr-action-button" onclick={{action "saveBand"}}>Add</button>
-            <span class="rr-cancel-icon" onclick={{cancel "cancelAddButton"}}>{{fa-icon "times"}}</span>
+           <form class="rr-inline-form" onsubmit={{action "saveBand"}}>
+               {{input type="text" class="rr-input" value=newBandName placeholder="New Band"}}
+               <button type="submit" class="rr-action-button" disabled={{isAddButtonDisabled}}>{{fa-icon "times"}}</button>
+           </form>
         {{else}}
         <label onclick={{action "addBand"}}>
             {{fa-icon "plus"}}

@@ -1,18 +1,21 @@
 import EmberObject, {computed} from'@ember/object';
-//import {dasherize} from '@ember/string';
+import {dasherize} from '@ember/string';
 
 export default EmberObject.extend({
     name:'',
 
     init(){
         this._super(...arguments);
-        let song=this.get('songs');
+
+        let songs=this.get('songs');
+
+        
         if (!songs){
             this.set('songs',[]);
         }
     },
 
-    slug:computed('name', function() {
+    slug: computed('name', function() {
         return dasherize(this.get('name'));
     })
 });
