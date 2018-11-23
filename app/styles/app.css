@@ -22,17 +22,27 @@ a{
     border-bottom:1px solid;
 }
 
-.page-header > .app-title{
+/* .page-header > .app-title{
 margin-top:0;
 margin-bottom:0;
 }
+pagina 119*/
+.rr-header-link>.app-title{
+    margin-top:0;
+    margin-bottom:0;
+}
+.rr-textarea{
+    width:100%;
+    padding:.5rem;
+}
+/* pagina 119*/
+
 .app-title>.subtitle{
     font-weight: normal;
 }
 .list>li{
     margin-bottom:10px;
 }
-
 
 .navbar{
     position:relative;
