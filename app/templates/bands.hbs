@@ -2,7 +2,7 @@
     <ul class="rr-list">
         {{#each model as |band|}}
             <li class="rr-list-item">
-                 {{#link-to "bands.band.songs" band.slug class="rr-and-link"}}
+                 {{#link-to "bands.band.index" band.slug class="rr-and-link"}}<!--  -->
                     {{band.name}}
                     <span class="pointer">
                         {{fa-icon "angle-right"}}
