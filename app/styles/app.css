@@ -1,3 +1,16 @@
+:root{
+    --blue:#357edd;
+    --dark-blue:#00449e;
+    --light-blue:#96ccff;
+    --mid-grey:#555;
+    --near-white:#f4f4f4;
+    --mid-grey:#555;
+    --input-color:var(--mid-grey);
+    --button-color:var(--near-white);
+    --buton-bg-color:var(--blue);
+    --button-hover-color:var(--dark-blue);
+    --button-disabled-color:var(--light-blue);
+}
 a{
     color:inherit;
     text-decoration:none;
@@ -19,19 +32,7 @@ margin-bottom:0;
 .list>li{
     margin-bottom:10px;
 }
-:root{
-    --blue:#357edd;
-    --dark-blue:#00449e;
-    --light-blue:#96ccff;
-    --mid-grey:#555;
-    --near-white:#f4f4f4;
-    --mid-grey:#555;
-    --input-color:var(--mid-grey);
-    --button-color:var(--near-white);
-    --buton-bg-color:var(--blue);
-    --button-hover-color:var(--dark-blue);
-    --button-disabled-color:var(--light-blue);
-}
+
 
 .navbar{
     position:relative;
@@ -82,5 +83,45 @@ margin-bottom:0;
 }
 .rr-band-link.active > .pointer {
     display: inline-block;
+}
+
+.rr-new-label{
+    margin-top:1rem;
+    padding-left:1rem;
+    background-color:green;
+}
+.rr-input{
+    color:var(--input-color);
+    border-style:solid;
+    border-width: 1px;
+    padding: .25rem;
+}
+
+.rr-action-button{
+    color:var(--buton-color);
+    background-color: var(--button-bg-color);
+    border-radius:.125rem;
+    padding:.25rem;
+    padding-left:.5rem;
+    padding-right:.5rem;
+}
+
+.rr-action-button:hover{
+    background-color:var(--button-hover-color);
+}
+
+.rr-action-button[disabled]{
+    background-color: var(--button-disabled-color);
+}
+.rr-cancel-icon{
+    align-self:center;
+    margin-left:.25rem;
+}
+.rr-inline-form{
+    display: flex;
+}
+.rr-inline-form-group{
+    display:flex;
+    justify-content: space-between;
 }
 
