@@ -1,7 +1,14 @@
 import Route from '@ember/routing/route';
+import bands from '../controllers/bands';
 
 export default Route.extend({
     beforeModel:function() {
-        this.transitionTo('bands');// this.transitionTo('bands.band.songs', 'pearl-jam');
+        if (bands.get('description')){
+            this.transitionTo('bands.band.details');
+        } 
+        else {
+            this.transitionTo('bands.band.songs')
+        }
+        this.transitionTo('bands');
     }
 });
