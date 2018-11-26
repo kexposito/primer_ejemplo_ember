@@ -16,19 +16,7 @@ export default Controller.extend({
             this.set('isAddingBand',false);
         },
 
-        saveBand(event){
-            event.preventDefault();
-            let newBand=Band.create({ name:this.get('newBandName') });
-            this.get('model').pushObject(newBand);
-            this.setProperties({
-                newBandName: '',
-                isAddingBand: false
-            });
-            this.get(router).transitionTo('bands.band.songs', newBand);
-        }
-
-        // mio 
-       /* saveBand: function() {
+        saveBand: function() {
             event.preventDefault();
             let newBand = this.get('store').createRecord('band', { name: this.get('newBandName')});
             return newBand.save()
@@ -38,10 +26,9 @@ export default Controller.extend({
                         isAddingBand: false
 
                     });
-                                        this.get('router').transitionTo('bands.band.songs', newBand);
-
+                    this.transitionToRoute('bands.band.songs', newBand);
                 });
 
-        } */
+        }
     }
 });

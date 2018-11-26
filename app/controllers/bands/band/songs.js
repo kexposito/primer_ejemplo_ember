@@ -13,15 +13,19 @@ export default Controller.extend({
         addSong(){
             this.set('isAddingSong',true);
         },
+        saveSong() {
+            const band = this.get('model');
+            let newSong = this.get('store').createRecord('song', {
+                title: this.get('newSongTitle'),
+                band
+            });
+            return newSong.save()
+                .then(() => {
+                    this.set('newSongTitle','');
+                });
+        },
         cancelAddSong(){
             this.set('isAddingSong',false);
-        },
-
-        saveSong(event){
-            event.preventDefault();
-            let newSong=Song.create({title: this.get('newSongTitle')});
-            this.get('model.songs').pushObject(newSong);
-            this.set('newSongTitle','');
         },
         updateRating(song, rating){
            let currentRating=song.get('rating');
