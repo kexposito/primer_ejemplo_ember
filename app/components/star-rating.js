@@ -6,7 +6,6 @@ export default Component.extend({
 
     rating: 0,
     maxRating: 5,
-    //item : null,
     onClick: '',
 
     stars:computed('rating','maxRating',function(){
@@ -19,8 +18,8 @@ export default Component.extend({
     }),
 
     actions: {
-        setRating: function(newRating){
-            return this.get('onClick')(rating);// return this.get('onClick')(rating);
+        setRating: function(){ //        setRating: function(newRating){
+            return this.get('onClick');// return this.get('onClick')(rating);
         }
     }
 

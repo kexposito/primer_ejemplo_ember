@@ -8,7 +8,7 @@ export default Route.extend({
     actions: {
         willTransition(transition) {
             if (this.get('controller.isEditing')) {
-                let leave = windows.confirm('Are you sure?');
+                let leave = window.confirm('Are you sure?');
                 if (!leave) {
                     transition.abort();
                 }

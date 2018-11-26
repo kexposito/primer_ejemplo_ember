@@ -1,15 +1,19 @@
 <ul class="rr-list">
-    {{#each model.songs as |song|}}
-        <li class="rr-list-item">
-           <!-- {{song.title}} <span class="rating fr">{{song.rating}}</span>-->
-           {{song.title}}
-           {{star-rating  class="fr" rating=song.rating item=song onclick=(action 'updateRating' song)}}
-        </li>
-    {{else}}
-        <li class="rr-empty-message">
-            No {{model.name}} songs yet, why dont you <a herf="#" onclick={{action "addSong"}}>create one?</a>
-        </li>
-    {{/each}}
+  {{#each model.songs as |song|}}
+    <li class="rr-list-item">
+      {{song.title}}   
+      {{star-rating  
+        class="fr" 
+        rating=song.rating 
+        item=song 
+        onclick=(action "updateRating" song)
+      }}
+    </li>
+  {{else}}
+    <li class="rr-empty-message">
+     No {{model.name}} songs yet, why dont you <a herf="#" onclick={{action "addSong"}}>create one?</a>
+    </li>
+  {{/each}}
 </ul>
 <div class="rr-new-label">
     {{#if isAddingSong}}

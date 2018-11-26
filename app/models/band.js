@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-import { dasherize } from '@ember/string';
+//import { dasherize } from '@ember/string';
 
 const { Model, attr, hasMany } = DS;
 

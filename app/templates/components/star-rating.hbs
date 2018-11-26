@@ -1,9 +1,9 @@
 {{#each stars as |star|}}
-<a href="#">
+  <a href="#">
     {{#if star.isFull}}
-        {{fa-icon 'star'}}
+      {{fa-icon "star"}}
     {{else}}
-        {{fa-icon 'star-o'}}
+      {{fa-icon "star-o"}}
     {{/if}}
-</a>
+  </a>
 {{/each}}
