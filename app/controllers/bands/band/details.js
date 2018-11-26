@@ -3,10 +3,19 @@ import Controller from '@ember/controller';
 export default Controller.extend({
     isEditing: false,
 
-    actiones:{
-        toggleIsEditing() {
-            this.toggleProperty('isEditing');
+    actions:{
 
-        }
+        edit() {
+            this.set('isEditing',true);
+        },
+        
+        save() {
+            let band = this.get('model');
+            return band.save()
+                .then ( () => {
+                    this.set('isEditing',false);
+
+                });
+        }  
     }
 });
