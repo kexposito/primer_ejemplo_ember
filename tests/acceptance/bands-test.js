@@ -26,11 +26,12 @@ module('Acceptance | Bands', function(hooks) {
   });
 
   test('Create a band',async function(assert) {
+    debugger;
     server.create('band', { name: 'Royal Blood'  });
-    debugger
+    
     await visit('/bands');
-    await click('ml1');//este esta malaso
-    await fillIn('.rr-input', 'Caspian');
+    await click('label');//este esta malaso (se reseulve con los eber install ember-test-selectors)
+    await fillIn('.rr-input', 'Caspian'); 
     await click('.rr-action-button');
 
     let bandLinks = this.element.querySelectorAll('.rr-band-link');
