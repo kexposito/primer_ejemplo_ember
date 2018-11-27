@@ -42,7 +42,7 @@ module('Integration | Component | star-rating', function(hooks) {
          'The right amount of full star is rendered after changing rating'
          );
 
-      assert.dom('.fa-star.o').exists(
+      assert.dom('.fa-star-o').exists(
         { count: 8 },
         'The right amount of empty star is rendered after changing rating'
         );

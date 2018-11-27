@@ -1,4 +1,4 @@
-import { click, fillIn } from '@ember/test-hepers';
+import { click, fillIn } from '@ember/test-helpers';
 
 export async function createBand(name) {
     await click('[data-test-new-band-label]');
