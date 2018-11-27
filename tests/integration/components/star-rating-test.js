@@ -6,21 +6,46 @@ import hbs from 'htmlbars-inline-precompile';
 module('Integration | Component | star-rating', function(hooks) {
   setupRenderingTest(hooks);
 
-  test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+  test(
+    'Renders the full and empty star correctly',
+    async function(assert) { 
+      this.set('rating', 4);
+      this.set('maxRating', 5);
 
-    await render(hbs`{{star-rating}}`);
+      await render(hbs `{{star-rating rating=rating maxRating=maxRating}}`);
 
-    assert.equal(this.element.textContent.trim(), '');
+      assert.dom('.fa-star').exists(
+        { count: 4}, 
+        'The right amount of full star is rendered'
+        );
 
-    // Template block usage:
-    await render(hbs`
-      {{#star-rating}}
-        template block text
-      {{/star-rating}}
-    `);
+      assert.dom('.fa-star-o').exists(
+        { count: 1},
+        'The right amoung of empty star are rendered'
+        );
 
-    assert.equal(this.element.textContent.trim(), 'template block text');
-  });
+      this.set('maxRating',10);
+
+      assert.dom('.fa-star').exists(
+        { count: 4 },
+        'The right amount of full stars is rendered after changing maxRating'
+      );
+      assert.dom('.fa-star-o').exists(
+        { count: 6 }, 
+        'The right amount of empty stars is rendered after changing maxRating'
+        );
+
+      this.set('rating', 2);
+
+      assert.dom('.fa-star').exists(
+        { count: 2 },
+         'The right amount of full star is rendered after changing rating'
+         );
+
+      assert.dom('.fa-star.o').exists(
+        { count: 8 },
+        'The right amount of empty star is rendered after changing rating'
+        );
+    }
+  );
 });
