@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { visit, click, fillIn } from '@ember/test-helpers';
+import { visit, } from '@ember/test-helpers';//click, fillIn 
 import { setupApplicationTest } from 'ember-qunit';
 import setupMirage from 'ember-cli-mirage/test-support/setup-mirage';
 import { createBand } from 'rarwe/tests/helpers/custom-helpers';

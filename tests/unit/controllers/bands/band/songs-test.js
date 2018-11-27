@@ -7,7 +7,7 @@ module('Unit | Controller | bands/band/songs', function(hooks) {
   test('isAddingButtonDisabled', function(assert) {
     
     //    let controller = this.owner.lookup('controller:bands/band/songs');
-    let controller = this.owner.lookup('controller:bands/band/foos');
+    let controller = this.owner.lookup('controller:bands/band/songs');
     controller.set(
       'newSongTitle',
        'Belenos'
@@ -25,6 +25,6 @@ module('Unit | Controller | bands/band/songs', function(hooks) {
       'isAddingButtonDisabled'),
       'The button is disabled when de title is empty'
       );
-      
+
   });
 });
