@@ -11,23 +11,38 @@
     </li>
   {{else}}
     <li class="rr-empty-message">
-     No {{model.name}} songs yet, why dont you <a herf="#" onclick={{action "addSong"}}>create one?</a>
+      No {{model.name}} songs yet, why dont you <a href="#" onclick={{action "addSong"}}>create one?</a>
     </li>
   {{/each}}
 </ul>
 <div class="rr-new-label">
   {{#if isAddingSong}}
-    <form class="rr-inline-form" {{action "saveSong" on="submit"}} data-test-new-song-form>
-     {{input type="text" class="rr-input" value=newSongTitle placeholder="New Song" data-test-new-song-input="new-song"}}
-     <div class="rr-inline-form-group ml-auto">
-      <button type="submit" class="rr-action-button" disabled={{isAddButtonDisabled}} data-test-new-song-button>Add</button>
-      <span class="rr-cancel-icon" onclick={{action "cancelAddSong"}}>{{fa-icon "times"}}</span>
-     </div>
+    <form 
+      class="rr-inline-form" 
+      {{action "saveSong" on="submit"}}   
+    >
+      {{input 
+        type="text" 
+        class="rr-input" 
+        value=newSongTitle 
+        placeholder="New Song" 
+        data-test-new-song-input="new-song"
+      }}
+      <div class="rr-inline-form-group ml-auto">
+        <button 
+          type="submit" 
+          class="rr-action-button" 
+          disabled={{isAddButtonDisabled}} 
+        >
+          Add
+        </button>
+        <span class="rr-cancel-icon" >{{fa-icon "times"}}</span>
+      </div>
     </form>
   {{else}}
     <label onclick={{action "addSong"}} data-test-new-song-label>
-    {{fa-icon "plus"}}
-    <span class="ml1">Add new song</span>
-   </label>
+      {{fa-icon "plus"}}
+      <span class="ml1">Add new song</span>
+    </label>
   {{/if}}
 </div>
